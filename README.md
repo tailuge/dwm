@@ -8,3 +8,13 @@ cd dwm
 sudo ./setup-pi.sh
 sudo make install
 ```
+
+## pi useful
+
+```
+git config --global user.name tailuge
+sudo dpkg-reconfigure sddm
+
+
+
+```
