@@ -14,7 +14,8 @@ sudo make install
 ```
 git config --global user.name tailuge
 sudo dpkg-reconfigure sddm
-
+lsusb
+lsblk
 
 
 ```
