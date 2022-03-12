@@ -20,6 +20,21 @@ vcgencmd measure_temp
 xinput test-xi2
 xprop
 sudo dpkg-reconfigure sddm
+raspi-config
+raspistill
+raspivid
+sudo nmap --osscan-guess -O -sS 192.168.1.0/24
+scp pi@raspberrypi:/home/pi/cputemp.png .
+ssh -X pi@raspberrypi
+guvcview
+neofetch
+```
+
+## misc
+
+```
+sudo apt install ./icaclient_20.9.0.15_amd64.deb
+sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts
 ```
 
 ## git useful
