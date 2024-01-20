@@ -1,0 +1,45 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-2.27.0.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+	<script>
+
+	//  const url="https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv"
+	  const url="data.csv"
+	  
+	  d3.csv(url, function(err, rows){
+
+  function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
+}
+
+
+var trace1 = {
+  type: "scatter",
+  mode: "lines",
+  name: 'Temperature',
+  x: unpack(rows, 'datetime'),
+  y: unpack(rows, 'temperature'),
+  line: {color: '#17BECF'}
+}
+
+var data = [trace1];
+
+var layout = {
+    title: 'Temperature Time Series',
+    xaxis: {
+	type: 'date'
+    }
+};
+
+Plotly.newPlot('myDiv', data, layout);
+})
+
+	</script>
+	<title>Pi Temperature</title>
+</head>
+
+<body>
+	<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+</body>
